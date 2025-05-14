@@ -3,6 +3,6 @@
 def islower(c):
     for i in c:
         if ord(i) >= ord('a') and ord(c) <= ord('z'):
-        print("{}".format(chr(ord(i) - 32)), end="")
+            print("{}".format(chr(ord(i) - 32)), end="")
     else:
         print(c, end="")
