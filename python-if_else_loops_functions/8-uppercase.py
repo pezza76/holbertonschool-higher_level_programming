@@ -5,4 +5,4 @@ def islower(c):
         if ord(i) >= ord('a') and ord(c) <= ord('z'):
             print("{}".format(chr(ord(i) - 32)), end="")
     else:
-        print(c, end="")
+        print(i, end="")
