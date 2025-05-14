@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 
 def islower(c):
-    if ord(c) >= ord('a') and ord(c) <= ord('z'):
-        print(chr(ord(c) - 32), end="")
+    for i in c:
+        if ord(i) >= ord('a') and ord(c) <= ord('z'):
+        print("{}".format(chr(ord(i) - 32)), end="")
     else:
         print(c, end="")
