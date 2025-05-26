@@ -6,4 +6,3 @@ def uniq_add(my_list=[]):
     for i in result:
         total = total + i
     return total
- 
