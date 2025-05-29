@@ -7,7 +7,7 @@ This module defines a Square class.
 class Square:
     """Square class with a private size attribute."""
 
-    def __init__(self, size):
+    def __init__(self, size=0):
         self.__size = size
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
