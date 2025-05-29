@@ -8,4 +8,4 @@ This module defines a Square class.
 class Square:
     """An empty Square class."""
     def __init__(self):
-        self.__size
+        self.__size = size
