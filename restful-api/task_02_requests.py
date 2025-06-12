@@ -29,5 +29,5 @@ def fetch_and_save_posts():
             for i in result:
                 filtered_post = {}
                 for j in fieldnames:
-                    filtered_post[j] = result[j]
+                    filtered_post[j] = i[j]
             writer.writerow(filtered_post)
