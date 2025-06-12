@@ -27,4 +27,6 @@ def fetch_and_save_posts():
             writer = csv.DictWriter(f, fieldnames=fieldnames)
             writer.writeheader()
             for i in result:
-                writer.writerow(i)
+                filtered_post = {}
+                for j in fieldnames:
+                    filtered_post[j] = result[j]
