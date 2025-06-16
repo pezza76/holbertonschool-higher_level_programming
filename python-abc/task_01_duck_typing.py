@@ -29,7 +29,7 @@ class Rectangle(Shape):
         return self.width * self.height
 
     def perimeter(self):
-        return 2(self.width + self.height)
+        return 2 * (self.width + self.height)
 
 def shape_info(shape):
     print(shape.area())
