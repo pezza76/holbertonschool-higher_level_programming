@@ -32,8 +32,8 @@ class Rectangle(Shape):
         return 2 * (self.width + self.height)
 
 def shape_info(shape):
-    print(f"{shape.area():.1f}")
-    print(f"{shape.perimeter():.1f}")
+    print(f"Area: {shape.area():.1f}")
+    print(f"Perimeter: {shape.perimeter():.1f}")
 
 circle = Circle(radius=5)
 shape_info(circle)
