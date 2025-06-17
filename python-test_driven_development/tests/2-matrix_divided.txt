@@ -7,6 +7,9 @@
 >>> matrix_divided([[4, 8], [2, 6]], 2)
 [[2.0, 4.0], [1.0, 3.0]]
 
+>>> matrix_divided([[4, 8], [2, 6]], float('inf'))
+[[0.0, 0.0], [0.0, 0.0]]
+
 >>> matrix_divided([[1, 2], ['3', 4]], 2)
 Traceback (most recent call last):
 ...
