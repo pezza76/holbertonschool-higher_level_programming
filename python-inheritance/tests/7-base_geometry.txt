@@ -2,7 +2,7 @@ BaseGeometry tests
 ==================
 
 >>> bg = __import__('7-base_geometry').BaseGeometry
-
+>>> bg = BaseGeometry()
 Tests:
 
 Test - bg is an instance of BaseGeometry
