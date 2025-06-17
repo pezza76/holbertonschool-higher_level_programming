@@ -1,6 +1,9 @@
 #!/usr/bin/python3
+"""divides all elements of a matrix"""
+
 
 def matrix_divided(matrix, div):
+    """divides all elements of a matrix"""
     length = len(matrix[0])
     new_matrix = [row[:] for row in matrix]
 
