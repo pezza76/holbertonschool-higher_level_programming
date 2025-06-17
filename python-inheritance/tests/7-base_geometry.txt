@@ -7,6 +7,12 @@ BaseGeometry tests
 >>> bg.integer_validator("my_int", 12)
 >>> bg.integer_validator("width", 89)
 
+
+>>> bg.area(-1)
+Traceback (most recent call last):
+...
+ValueError: Area cannot be negative.
+
 >>> try:
 ...     bg.integer_validator("name", "John")
 ... except Exception as e:
