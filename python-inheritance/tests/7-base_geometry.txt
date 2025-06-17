@@ -8,7 +8,7 @@ BaseGeometry tests
 >>> bg.integer_validator("width", 89)
 
 
->>> bg.area(-1)
+>>> bg.area()
 Traceback (most recent call last):
 ...
 ValueError: Area cannot be negative.
