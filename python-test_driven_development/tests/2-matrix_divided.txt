@@ -1,6 +1,5 @@
 
 matrix_divided = __import__('2-matrix_divided').matrix_divided
-md = matrix_divided
 
 #Divides all elements of the matrix by div.
 #Raises TypeError if matrix contains non int/float elements.
