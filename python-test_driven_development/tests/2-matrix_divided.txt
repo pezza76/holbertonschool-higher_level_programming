@@ -4,7 +4,7 @@ md = matrix_divided
 
 #Divides all elements of the matrix by div.
 #Raises TypeError if matrix contains non int/float elements.
->>>matrix_divided([[1, 2], ['3', 4]], 2)
+>>> matrix_divided([[1, 2], ['3', 4]], 2)
 Traceback (most recent call last):
 ...
 TypeError: matrix must be a matrix (list of lists) of integers/floats
