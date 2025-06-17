@@ -11,7 +11,7 @@ BaseGeometry tests
 >>> bg.area()
 Traceback (most recent call last):
 ...
-ValueError: Area cannot be negative.
+ValueError: area() is not implemented.
 
 >>> try:
 ...     bg.integer_validator("name", "John")
