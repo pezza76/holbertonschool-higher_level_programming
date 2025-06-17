@@ -3,8 +3,9 @@ BaseGeometry tests
 
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> bg = BaseGeometry()
-Tests:
 
-Test - bg is an instance of BaseGeometry
+#Tests:
+
+#Test - bg is an instance of BaseGeometry
 >>> bg.__class__
 <class '7-base_geometry.BaseGeometry'>
