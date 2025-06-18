@@ -1,48 +1,38 @@
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
+users = {}
 
-@app.route("/")
+@app.route('/')
 def home():
     return "Welcome to the Flask API!"
 
-users = {}
-
-@app.route("/data")
-def get_users():
-    ls = []
-    for i in users:
-        ls.append(i)
-    return jsonify(ls)
-
-@app.route("/status")
+@app.route('/status')
 def status():
     return "OK"
 
-@app.route("/users/<username>")
-def user_obj(username):
-    if username in users:
-        return jsonify(users[username])
-    else:
-        return jsonify({"error": "User not found"}), 404
+@app.route('/data')
+def data():
+    return jsonify(list(users.values()))
 
-@app.route("/add_user", methods=["POST"])
+@app.route('/add_user', methods=['POST'])
 def add_user():
     data = request.get_json()
-
     username = data.get("username")
-    name = data.get("name")
-    age = data.get("age")
-    city = data.get("city")
 
-    users[username] = {
-    "name": name,
-    "age": age,
-    "city": city
-    }
+    if not username:
+        return jsonify({"error": "Username is required"}), 400
+    if username in users:
+        return jsonify({"error": "Username already exists"}), 400
 
-    return jsonify({"message": "User added successfully", "user": users[username]})
+    users[username] = {"username": username}
+    return jsonify(users[username]), 201
 
+@app.route('/users/<username>')
+def get_user(username):
+    if username in users:
+        return jsonify(users[username]), 200
+    return jsonify({"error": "User not found"}), 404
 
 
 if __name__ == "__main__":
