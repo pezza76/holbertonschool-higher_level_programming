@@ -43,7 +43,7 @@ def add_user():
     "city": city
     }
 
-     return jsonify({"message": "User added successfully", "user": users[username]})
+    return jsonify({"message": "User added successfully", "user": users[username]})
 
 
 
