@@ -29,7 +29,7 @@ class MyHandler(BaseHTTPRequestHandler):
             self.send_response(404)
             self.send_header("Content-type", "text/plain")
             self.end_headers()
-            message = "404 Not Found"
+            message = "Not Found"
             self.wfile.write(message.encode())  # Send message as bytes
 
 server_address = ('localhost', 8000)
