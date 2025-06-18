@@ -27,7 +27,7 @@ class MyHandler(BaseHTTPRequestHandler):
 
         else:
             self.send_response(404)
-            self.send_header("Content-type", "text/html")
+            self.send_header("Content-type", "text/plain")
             self.end_headers()
             message = "404 Not Found"
             self.wfile.write(message.encode())  # Send message as bytes
