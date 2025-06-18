@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
@@ -27,6 +27,25 @@ def user_obj(username):
         return jsonify(users[username])
     else:
         return jsonify({"error": "User not found"}), 404
+
+@app.route("/add_user", methods=["POST"])
+def add_user():
+    data = request.get_json()
+
+    username = data.get("username")
+    name = data.get("name")
+    age = data.get("age")
+    city = data.get("city")
+
+    users[username] = {
+    "name": name,
+    "age": age,
+    "city": city
+    }
+
+     return jsonify({"message": "User added successfully", "user": users[username]})
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
