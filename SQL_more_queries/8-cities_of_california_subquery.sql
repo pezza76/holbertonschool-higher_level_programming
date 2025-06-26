@@ -1,6 +1,6 @@
 -- PRINT A LIST OF CITIES
 
-SELECT name
+SELECT id, name
 FROM cities
 WHERE state_id IN (
     SELECT id
