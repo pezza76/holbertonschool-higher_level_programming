@@ -1,5 +1,5 @@
  -- IMPORT A DATABASE
  USE hbtn_0d_tvshows;
  SELECT tv_shows.title, tv_show_genres.genre_id
- FROM title
+ FROM tv_shows
  JOIN tv_shows_genres ON tv_shows.id = tv_show_genres.show_id;
