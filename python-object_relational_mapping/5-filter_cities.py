@@ -20,7 +20,8 @@ query = """
 select cities.name
 from cities
 join states on cities.state_id = states.id
-where states.name = %s;
+where states.name = %s
+order by cities.id;
 """
 # execute the query
 cur.execute(query, (sys.argv[4],))
