@@ -34,7 +34,7 @@ if __name__ == '__main__':
     cities = []
     for i in result:
         cities.append(i[0])
-    
+
     # print result
     print(", ".join(cities))
 
