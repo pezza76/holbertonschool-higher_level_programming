@@ -30,8 +30,13 @@ if __name__ == '__main__':
     #fetch the results and save to a variable
     result = cur.fetchall()
 
+    # create an empty list
+    cities = []
     for i in result:
-        print(", ".join(i[0]))
+        cities.append(i[0])
+    
+    # print result
+    print(", ".join(cities))
 
     cur.close()
     db.close()
