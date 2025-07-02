@@ -13,6 +13,9 @@ if __name__ == '__main__':
         db=sys.argv[3]
     )
 
+    # create a cursor object
+    cur = db.cursor()
+
     # write a query
     query = """
     SELECT *
