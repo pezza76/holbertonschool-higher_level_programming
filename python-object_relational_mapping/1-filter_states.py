@@ -25,4 +25,8 @@ cur.execute(query)
 result = cur.fetchall()
 
 for i in result:
-    print(i)
+    print(i[0])
+
+cur.close()
+db.close()
+
