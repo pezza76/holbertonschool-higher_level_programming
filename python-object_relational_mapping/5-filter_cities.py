@@ -31,7 +31,7 @@ if __name__ == '__main__':
     result = cur.fetchall()
 
     for i in result:
-        print(i[0])
+        print(i[0], end=", ")
 
     cur.close()
     db.close()
