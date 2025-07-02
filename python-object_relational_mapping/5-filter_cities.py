@@ -27,7 +27,7 @@ if __name__ == '__main__':
     # execute the query
     cur.execute(query, (sys.argv[4],))
 
-    #fetch the results and save to a variable
+    # fetch the results and save to a variable
     result = cur.fetchall()
 
     # create an empty list
