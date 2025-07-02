@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""safe input to defend against sql injection'"""
+"""safe input to defend against sql injection"""
 
 import MySQLdb
 import sys
