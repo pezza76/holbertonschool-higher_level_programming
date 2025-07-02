@@ -1,6 +1,9 @@
+#!/usr/bin/python3
+"""Module that lists a row based on user input'"""
+
 import MySQLdb, sys
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     #connect to a database
     db = MySQLdb.connect(
         host='localhost',
