@@ -18,9 +18,10 @@ if __name__ == '__main__':
 
     # write a query
     query = """
-    SELECT *
+    SELECT cities.id, cities.name, states.name
     FROM cities
-    ORDER BY id;
+    JOIN states ON cities.state_id = states.id
+    ORDER BY cities.id;
     """
     cur.execute(query)
 
