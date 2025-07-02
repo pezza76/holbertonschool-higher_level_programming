@@ -4,29 +4,30 @@
 import MySQLdb
 import sys
 
-db = MySQLdb.connect(
-    host='localhost',
-    port=3306,
-    user=sys.argv[1],
-    passwd=sys.argv[2],
-    db=sys.argv[3]
-)
+if __name__ == "__main__":
+    db = MySQLdb.connect(
+        host='localhost',
+        port=3306,
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        db=sys.argv[3]
+    )
 
-query = """
-SELECT name
-FROM states
-WHERE name LIKE'N%'
-ORDER BY states.id;
-"""
+    query = """
+    SELECT name
+    FROM states
+    WHERE name LIKE'N%'
+    ORDER BY states.id;
+    """
 
-cur = db.cursor()
+    cur = db.cursor()
 
-cur.execute(query)
-result = cur.fetchall()
+    cur.execute(query)
+    result = cur.fetchall()
 
-for i in result:
-    print(i[0])
+    for i in result:
+        print(i[0])
 
-cur.close()
-db.close()
+    cur.close()
+    db.close()
 
