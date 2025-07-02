@@ -4,26 +4,27 @@
 import MySQLdb
 import sys
 
-# connect to a database
-db = MySQLdb.connect(
-    host='localhost',
-    user=sys.argv[1],
-    passwd=sys.argv[2],
-    db=sys.argv[3]
-)
+if __name__ == '__main__':
+    # connect to a database
+    db = MySQLdb.connect(
+        host='localhost',
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        db=sys.argv[3]
+    )
 
-# write a query
-query = """
-SELECT *
-FROM cities
-ORDER BY id;
-"""
-cur.execute(query)
+    # write a query
+    query = """
+    SELECT *
+    FROM cities
+    ORDER BY id;
+    """
+    cur.execute(query)
 
-result = cur.fetchall()
+    result = cur.fetchall()
 
-for i in result:
-    print(i)
+    for i in result:
+        print(i)
 
-cur.close()
-db.close()
+    cur.close()
+    db.close()
