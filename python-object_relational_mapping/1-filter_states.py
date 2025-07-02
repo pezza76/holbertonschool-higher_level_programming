@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module that lists all states with a name starting with 'N' from the database."""
+"""Module that lists all states with a name starting with 'N'"""
 
 import MySQLdb
 import sys
