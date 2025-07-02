@@ -14,7 +14,7 @@ if __name__ == "__main__":
     )
 
     query = """
-    SELECT name
+    SELECT *
     FROM states
     WHERE name LIKE'N%'
     ORDER BY states.id;
