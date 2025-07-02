@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 """Module that lists a row based on user input'"""
 
-import MySQLdb, sys
+import MySQLdb
+import sys
 
 if __name__ == "__main__":
-    #connect to a database
+    # connect to a database
     db = MySQLdb.connect(
         host='localhost',
         port=3306,
@@ -13,7 +14,7 @@ if __name__ == "__main__":
         db=sys.argv[3]
     )
 
-    #Create a cursor object
+    # Create a cursor object
     cur = db.cursor()
 
     query = """
@@ -22,15 +23,15 @@ if __name__ == "__main__":
     WHERE name = '{}';
     """.format(sys.argv[4])
 
-    #execute the command
+    # execute the command
     cur.execute(query)
 
-    #save the result
+    # save the result
     result = cur.fetchall()
 
     for i in result:
         print(i)
 
-    #close connections
+    # close connections
     cur.close()
     db.close()
