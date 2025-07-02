@@ -19,10 +19,11 @@ if __name__ == "__main__":
     query = """
     SELECT *
     FROM states
-    WHERE name = %s;
-    """
+    WHERE name = '{}';
+    """.format(sys.argv[4])
+
     #execute the command
-    cur.execute(query, (sys.argv[4],))
+    cur.execute(query)
 
     #save the result
     result = cur.fetchall()
