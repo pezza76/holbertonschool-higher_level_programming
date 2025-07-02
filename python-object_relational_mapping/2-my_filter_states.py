@@ -22,7 +22,7 @@ if __name__ == "__main__":
     WHERE name = %s;
     """
     #execute the command
-    cur.execute(query, sys.argv[4])
+    cur.execute(query, (sys.argv[4],))
 
     #save the result
     result = cur.fetchall()
