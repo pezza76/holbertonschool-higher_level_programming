@@ -20,7 +20,7 @@ if __name__ == '__main__':
 
     # find states containing the letter a
     states = session.query(State).filter(State.name.like('%a%')).all()
-    
+ 
     # delete these states
     for state in states:
         session.delete(state)
