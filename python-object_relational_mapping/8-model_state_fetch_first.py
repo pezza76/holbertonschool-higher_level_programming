@@ -21,5 +21,5 @@ if __name__ == '__main__':
     # create a query
     first = session.query(State).first()
 
-    for state in first:
+    if first:
         print(f"{state.id}: {state.name}")
