@@ -23,7 +23,7 @@ if __name__ == '__main__':
     session.commit()
 
     # create a query
-    state = session.query(State).filter_by(name='Louisiana')
+    state = session.query(State).filter_by(name='Louisiana').first()
 
     # print result
     if state:
