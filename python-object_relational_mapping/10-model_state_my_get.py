@@ -25,4 +25,4 @@ if __name__ == '__main__':
     if state:
         print(state.id)
     else:
-        print('Nothing')
+        print('Not Found')
