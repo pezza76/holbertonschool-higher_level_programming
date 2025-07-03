@@ -11,7 +11,8 @@ if __name__ == '__main__':
     password = sys.argv[2]
     database = sys.argv[3]
 
-    engine = create_engine(f"mysql+mysqldb://{username}:{password}@localhost:3306/{database}")
+    engine = create_engine(
+        f"mysql+mysqldb://{username}:{password}@localhost:3306/{database}")
 
     # create a session
     Session = sessionmaker(bind=engine)
@@ -21,4 +22,3 @@ if __name__ == '__main__':
 
     for state in states:
         print(f"{state.id}: {state.name}")
-
