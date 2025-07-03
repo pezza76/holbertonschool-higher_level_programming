@@ -1,27 +1,12 @@
-import MySQLdb
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, Integer, String
 
-#connect to a database
-db = MySQLdb.connect(
-    host='localhost',
-    user='root',
-    passwd='root',
-    db='hbtn_0d_tvshows'
-)
+Base = declarative_base()
 
-#create a cursor to allow you to execute sql demands
-cursor = db.cursor()
+class Book(Base):
+    __tablename__ = 'books' # this line tells it to connect to a table called books in the database
+    id = Column(Integer, primary_key=True)
+    title = Column(String(100), nullable=False)
 
-#run this command
-cursor.execute("SHOW TABLES;")
-
-#get results
-x = cursor.fetchall() #this returns a tuple
-
-for i in x:
-    print(i[0])
-
-
-
-
-
+print(Base.metadata.tables)
 
