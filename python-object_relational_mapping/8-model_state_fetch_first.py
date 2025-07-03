@@ -22,4 +22,4 @@ if __name__ == '__main__':
     first = session.query(State).first()
 
     if first:
-        print(f"{state.id}: {state.name}")
+        print(f"{first.id}: {first.name}")
