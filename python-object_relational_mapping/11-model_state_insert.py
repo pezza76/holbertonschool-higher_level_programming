@@ -23,8 +23,8 @@ if __name__ == '__main__':
     session.commit()
 
     # create a query
-    states = session.query(State).all()
+    state = session.query(State).filter_by(name='Louisiana')
 
     # print result
-    for state in states:
-        print(f"{state.id}: {state.name}")
+    if state:
+        print(state.id)
