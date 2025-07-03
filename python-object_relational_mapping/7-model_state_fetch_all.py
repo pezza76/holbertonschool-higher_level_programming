@@ -6,19 +6,19 @@ from sqlalchemy.orm import declarative_base, sessionmaker
 from model_state import Base, State
 import sys
 
+if __name__ == '__main__':
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database = sys.argv[3]
 
-username = sys.argv[1]
-password = sys.argv[2]
-database = sys.argv[3]
+    engine = create_engine(f"mysql+mysqldb://{username}:{password}@localhost:3306/{database}")
 
-engine = create_engine(f"mysql+mysqldb://{username}:{password}@localhost:3306/{database}")
+    # create a session
+    Session = sessionmaker(bind=engine)
+    session = Session()
 
-# create a session
-Session = sessionmaker(bind=engine)
-session = Session()
+    states = session.query(State).all()
 
-states = session.query(State).all()
-
-for state in states:
-    print(state)
+    for state in states:
+        print(state)
 
