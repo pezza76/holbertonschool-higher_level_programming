@@ -7,6 +7,7 @@ from sqlalchemy.orm import declarative_base
 # create the Base class
 Base = declarative_base()
 
+
 # create a class called State the inherits from Base
 class State(Base):
     """State class that maps to the 'states' table in the database."""
