@@ -1,5 +1,10 @@
 #!/usr/bin/node
 
-const int = '43';
-const num = parseInt(int)
-console.log(num)
+const int = process.argv[2];
+const num = parseInt(int);
+
+if (isNaN(num)) {
+    console.log('Not a number');
+} else {
+    console.log(num);
+}
