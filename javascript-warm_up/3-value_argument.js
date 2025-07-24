@@ -1,9 +1,15 @@
 #!/usr/bin/node
 
-const args = process.argv
+const args = process.argv.slice(2)
 
-if (args.length - 2 === 0) {
-    console.log("No argument")
+let count = 0;
+
+args.forEach(function(element) {
+    count ++;
+});
+
+if (count === 0) {
+  console.log("No argument");
 } else {
-    console.log(args[2])
+    console.log(args[0])
 }
