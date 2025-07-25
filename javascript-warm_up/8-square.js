@@ -1,5 +1,5 @@
 #!/usr/bin/node
-sizeOfSquare = Number(process.argv[2]);
+const sizeOfSquare = Number(process.argv[2]);
 
 if (!Number.isInteger(sizeOfSquare)) {
   console.log('Missing size');
