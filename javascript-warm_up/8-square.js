@@ -1,12 +1,8 @@
 #!/usr/bin/node
+sizeOfSquare = Number(process.argv[2]);
 
-const a = Number(process.argv[2]);
-const b = Number(process.argv[3]);
-
-function add(a, b) {
-    for (let i = 0; i < 1; i++) {
-        console.log(a + b);
-    }
+if (sizeOfSquare) {
+  for (let i = 0; i < sizeOfSquare; i++) {
+    console.log('x'.repeat(sizeOfSquare));
+  }
 }
-
-add(a, b);
