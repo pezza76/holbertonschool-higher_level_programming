@@ -1,7 +1,7 @@
 #!/usr/bin/node
 sizeOfSquare = Number(process.argv[2]);
 
-if (!isInteger(sizeOfSquare)) {
+if (!Number.isInteger(sizeOfSquare)) {
     console.log('Missing size')
 }
 for (let i = 0; i < sizeOfSquare; i++) {
