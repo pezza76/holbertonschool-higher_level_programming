@@ -21,7 +21,11 @@ def generate_invitations(template, attendees):
                 'event_location': i.get('event_location', 'N/A') or 'N/A'
                 
             }
+            X = 0
+            with open(f"output_{X}.txt", 'w') as file:
+                file.write(template_content.format(**data))
             print(template_content.format(**data))
+            X = X + 1
     else:
         return "Function failed"
 
