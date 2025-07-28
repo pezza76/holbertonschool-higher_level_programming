@@ -10,14 +10,18 @@ attendees = [
     {"name": "Charlie", "event_title": "AI Summit", "event_date": None, "event_location": "Boston"}
 ]
 
-for i in attendees:
-    if i.get('event_date') == None:
-        i['event_date'] = 'N/A'
-        
+
 def generate_invitations(template, attendees):
     if isinstance(template_content, str) and isinstance(attendees, list):
         for i in attendees:
-            print(template_content.format(**i))
+            data = {
+                'name': i.get('name', 'N/A') or 'N/A',
+                'event_title': i.get('event_title', 'N/A') or 'N/A',
+                'event_date': i.get('event_date', 'N/A') or 'N/A',
+                'event_location': i.get('event_location', 'N/A') or 'N/A'
+                
+            }
+            print(template_content.format(**data))
     else:
         return "Function failed"
 
