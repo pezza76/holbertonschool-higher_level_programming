@@ -10,7 +10,7 @@ attendees = [
     {"name": "Charlie", "event_title": "AI Summit", "event_date": None, "event_location": "Boston"}
 ]
 
-
+x = 1
 def generate_invitations(template, attendees):
     if isinstance(template_content, str) and isinstance(attendees, list):
         for i in attendees:
@@ -21,7 +21,7 @@ def generate_invitations(template, attendees):
                 'event_location': i.get('event_location', 'N/A') or 'N/A'
                 
             }
-            X = 0
+            
             with open(f"output_{X}.txt", 'w') as file:
                 file.write(template_content.format(**data))
             print(template_content.format(**data))
