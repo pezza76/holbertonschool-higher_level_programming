@@ -10,8 +10,9 @@ attendees = [
     {"name": "Charlie", "event_title": "AI Summit", "event_date": None, "event_location": "Boston"}
 ]
 
-x = 1
+
 def generate_invitations(template, attendees):
+    X = 1
     if isinstance(template_content, str) and isinstance(attendees, list):
         for i in attendees:
             data = {
