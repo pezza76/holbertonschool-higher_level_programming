@@ -13,7 +13,7 @@ attendees = [
 
 def generate_invitations(template, attendees):
     X = 1
-    if isinstance(template_content, str) and isinstance(attendees, list):
+    if isinstance(template, str) and isinstance(attendees, list):
         for i in attendees:
             data = {
                 'name': i.get('name', 'N/A') or 'N/A',
@@ -24,8 +24,8 @@ def generate_invitations(template, attendees):
             }
             
             with open(f"output_{X}.txt", 'w') as file:
-                file.write(template_content.format(**data))
-            print(template_content.format(**data))
+                file.write(template.format(**data))
+            print(template.format(**data))
             X = X + 1
     else:
         return "Function failed"
