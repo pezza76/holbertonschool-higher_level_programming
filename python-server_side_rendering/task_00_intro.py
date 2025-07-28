@@ -12,6 +12,10 @@ attendees = [
 
 
 def generate_invitations(template, attendees):
+    if not template:
+        print("Template is empty, no output files generated.")
+        return
+
     X = 1
     if isinstance(template, str) and isinstance(attendees, list):
         for i in attendees:
