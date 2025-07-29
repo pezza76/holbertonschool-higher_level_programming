@@ -35,7 +35,7 @@ def products():
             data = list(reader)
         return render_template('product_display.html', items = data)
     
-    return "Invalid source", 400
+    return "Wrong source", 200
 
 if __name__ == "__main__":
     app.run(debug=True)
