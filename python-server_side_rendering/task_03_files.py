@@ -29,7 +29,7 @@ def products():
     items = []
     if source == 'json':
         with open('products.json') as f:
-            data = json.load(f)
+            items = json.load(f)
         
     
     elif source == 'csv':
