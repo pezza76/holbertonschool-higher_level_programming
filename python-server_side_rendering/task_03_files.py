@@ -1,85 +1,55 @@
-from flask import Flask, render_template, request
-import json
+
+from flask import Flask, render_template, json, request
 import csv
-import os
 
 app = Flask(__name__)
-
 
 @app.route('/')
 def home():
     return render_template('index.html')
 
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
 
 @app.route('/about')
 def about():
     return render_template('about.html')
 
-
-@app.route('/contact')
-def contact():
-    return render_template('contact.html')
-
-
 @app.route('/items')
 def items():
-    try:
-        with open('items.json') as f:
-            data = json.load(f)
-        items = data.get('items', [])
-        return render_template('items.html', items=items)
-    except FileNotFoundError:
-        return "Items file not found", 404
-    except json.JSONDecodeError:
-        return "Error decoding JSON", 500
-
-
-def read_json(file_path):
-    with open(file_path, 'r') as file:
-        return json.load(file)
-
-
-def read_csv(file_path):
-    products = []
-    with open(file_path, 'r') as file:
-        reader = csv.DictReader(file)
-        for row in reader:
-            row['id'] = int(row['id'])
-            row['price'] = float(row['price'])
-            products.append(row)
-    return products
-
+    with open('items.json') as f:
+        data = json.load(f)
+    return render_template('items.html', items = data.get('items', []))
 
 @app.route('/products')
 def products():
     source = request.args.get('source')
-    product_id = request.args.get('id')
-    file_path = ''
-
+    id = request.args.get('id')
+    
     if source == 'json':
-        file_path = 'products.json'
-
+        with open('products.json') as f:
+            items = json.load(f)
+    
     elif source == 'csv':
-        file_path = 'products.csv'
+        with open('products.csv') as f:
+            data = csv.DictReader(f)
+            items = list(data)
+
     else:
-        return render_template('product_display.html', error="Wrong source")
-
-    if not os.path.exists(file_path):
-        return render_template('product_display.html', error="File not found")
-
-    if source == 'json':
-        products = read_json(file_path)
-    else:
-        products = read_csv(file_path)
-
-    if product_id:
-        product_id = int(product_id)
-        products = [p for p in products if p['id'] == product_id]
-        if not products:
-            return render_template('product_display.html', error="Product not found")
-
-    return render_template('product_display.html', products=products)
+        return "Wrong source", 200
 
 
-if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+
+    if id:
+        items = [item for item in items if str(item.get('id')) == id]
+        if not items:
+            return "Product not found", 200
+    
+            
+            
+    return render_template('product_display.html', items=items)
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
