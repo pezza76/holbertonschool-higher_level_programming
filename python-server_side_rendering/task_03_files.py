@@ -24,6 +24,9 @@ def items():
 
 @app.route('/products')
 def products():
+    id_param = request.args.get('id')
+    if id_param:
+        items = [item for item in items if str(item.get('id')) == str(id_param)]
     if request.args.get('source') == 'json':
         with open('products.json') as f:
             data = json.load(f)
