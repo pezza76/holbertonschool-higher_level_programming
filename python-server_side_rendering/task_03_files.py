@@ -24,19 +24,30 @@ def items():
 
 @app.route('/products')
 def products():
-    
-    if request.args.get('source') == 'json':
+    source = request.args.get('source')
+    id_param = request.args.get('id')
+    items = []
+    if source == 'json':
         with open('products.json') as f:
             data = json.load(f)
-        return render_template('product_display.html', items = data)
+        
     
-    elif request.args.get('source') == 'csv':
+    elif source == 'csv':
         with open('products.csv') as f:
             reader = csv.DictReader(f)
             data = list(reader)
         return render_template('product_display.html', items = data)
     
-    return "Wrong source", 200
+    else:
+        return render_template("product_display.html", items=[], message="Wrong source"), 200
+    
+    if id_param:
+        items = [item for item in items if str(item.get('id')) == str(id_param)]
+    
+        if not items:
+            return render_template('product_display.html', items=[], message="Product not found")
+    
+    return render_template('product_display.html', items = data)
 
 if __name__ == "__main__":
     app.run(debug=True)
