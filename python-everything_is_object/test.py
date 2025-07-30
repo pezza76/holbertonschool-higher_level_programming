@@ -1,6 +1,8 @@
-s1 = [1,2,3]
-s2 = s1
-print(s1 is s2)
+a = [1, 2, 3]
 
-print(id(s1))
-print(id(s2))
+print(id(a) % 10)
+
+a += [4]
+
+print(a)
+print(id(a) % 10)
